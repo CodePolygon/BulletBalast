@@ -1,0 +1,122 @@
+[gd_scene load_steps=18 format=4 uid="uid://v4kstamdwmdo"]
+
+[ext_resource type="Texture2D" uid="uid://t488d81ma1fc" path="res://assets/own_models/gun-game_1-cocrete grey_Alpha.png" id="1_kvhj3"]
+[ext_resource type="Texture2D" uid="uid://b3wteu63x56jv" path="res://assets/own_models/gun-game_cocrete grey_Emissive.png" id="2_tiuma"]
+[ext_resource type="Texture2D" uid="uid://b3irbhjwcraqv" path="res://assets/own_models/gun-game_cocrete grey_Metallic.png-cocrete grey_Roughness.png" id="3_quhcu"]
+[ext_resource type="Texture2D" uid="uid://jhmn56qfnuj1" path="res://assets/own_models/gun-game_cocrete grey_Normal.png" id="4_cujj6"]
+[ext_resource type="Texture2D" uid="uid://co4ap7at0w6kk" path="res://assets/own_models/gun-game_boarder 2mod-cocrete grey_Alpha.png" id="5_6m6ap"]
+[ext_resource type="Texture2D" uid="uid://bbvcog8doui0i" path="res://assets/own_models/1.png" id="6_fjmrr"]
+[ext_resource type="Texture2D" uid="uid://djmknxmk0gm18" path="res://assets/own_models/cocrete grey/cocrete grey_Displacement.png" id="7_n2425"]
+[ext_resource type="Texture2D" uid="uid://b8xwl4ldew16c" path="res://assets/own_models/cocrete grey/cocrete grey_Metallic.png" id="8_3dv3b"]
+[ext_resource type="Texture2D" uid="uid://8okdmghcvm7p" path="res://assets/own_models/cocrete grey/cocrete grey_Normal.png" id="9_t6uwn"]
+[ext_resource type="Texture2D" uid="uid://bm0racn0pgfxq" path="res://assets/own_models/cocrete grey/cocrete grey_Roughness.png" id="10_sivm1"]
+[ext_resource type="Material" uid="uid://dfynf4pwbxvwj" path="res://assets/own_models/new_standard_material_3d.tres" id="11_fvrtf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5r0t"]
+resource_name = "Material.007"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_kvhj3")
+metallic = 1.0
+metallic_texture = ExtResource("3_quhcu")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_quhcu")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("2_tiuma")
+normal_enabled = true
+normal_texture = ExtResource("4_cujj6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pp8xx"]
+resource_name = "side"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("5_6m6ap")
+metallic = 1.0
+metallic_texture = ExtResource("3_quhcu")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_quhcu")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("2_tiuma")
+normal_enabled = true
+normal_texture = ExtResource("4_cujj6")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lbr4l"]
+_surfaces = [{
+"aabb": AABB(-1, 1, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "Material.007",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAA//8AAAAAAAAAAAAA//8AAP//AAA=")
+}, {
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAwAEAAEABQAAAAIAAwAAAAUABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "side",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_c16qw"]
+resource_name = "gun-game_Cube_008"
+_surfaces = [{
+"aabb": AABB(-1, 1, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray("//8AAAAA//8AAAAA/////w=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_a5r0t"),
+"name": "Material.007",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("//8AAAAA/78AAAAA////vwAAAAAAAP+///8AAP///7////9/////f////3////9/")
+}, {
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("AAD/////AAAAAAAA/////wAA/////wAAAAAAAP//////////AAAAAP//AAAAAP///////wAAAAD//wAAAAD//wAAAAD///////8AAAAA//8="),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEA"),
+"material": SubResource("StandardMaterial3D_pp8xx"),
+"name": "side",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAP////8AAAAAAAD//wAAAAD//wAAAAAAAP//AAAAAP+//////////7//////AAD/v///AAD///+///8AAP//AIAAAP////8AgP///////wCAAAAAAP//AIAAAAAAAAD/P///AAD///8///8AAAAA/z8AAAAA////P/8//3//P/9//z//f/8//3////9/////f////3////9//38AAP9/AAD/fwAA/38AAP9/////f////3////9///8AAP9/AAD/fwAA/38AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lbr4l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5hgx"]
+albedo_texture = ExtResource("6_fjmrr")
+metallic = 1.0
+metallic_texture = ExtResource("8_3dv3b")
+roughness_texture = ExtResource("10_sivm1")
+normal_enabled = true
+normal_texture = ExtResource("9_t6uwn")
+heightmap_enabled = true
+heightmap_texture = ExtResource("7_n2425")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5yoou"]
+data = PackedVector3Array(1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1)
+
+[node name="Cube_003" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_c16qw")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_r5hgx")
+surface_material_override/1 = ExtResource("11_fvrtf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+visible = false
+shape = SubResource("ConcavePolygonShape3D_5yoou")

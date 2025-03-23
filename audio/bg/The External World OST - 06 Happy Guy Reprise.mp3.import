@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddalynlkpgoyl"
+path="res://.godot/imported/The External World OST - 06 Happy Guy Reprise.mp3-e2464a0022679b1657e6dc6d7b09a105.mp3str"
+
+[deps]
+
+source_file="res://audio/bg/The External World OST - 06 Happy Guy Reprise.mp3"
+dest_files=["res://.godot/imported/The External World OST - 06 Happy Guy Reprise.mp3-e2464a0022679b1657e6dc6d7b09a105.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

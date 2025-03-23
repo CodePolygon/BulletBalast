@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://10rpa5k8wt8g"]
+
+[ext_resource type="Script" uid="uid://8t56bl3mwaip" path="res://ui scene/menu.gd" id="1_gn0ew"]
+[ext_resource type="Texture2D" uid="uid://bunv1c3tsigf6" path="res://UI TEXTURE/BG.png" id="1_xxtxt"]
+[ext_resource type="Texture2D" uid="uid://r461fpxvn21j" path="res://UI TEXTURE/logo.png" id="2_7twqp"]
+[ext_resource type="Texture2D" uid="uid://yewbk1qdl4k3" path="res://UI TEXTURE/e.png" id="2_dgph3"]
+[ext_resource type="Texture2D" uid="uid://gtr7aqlm2g5l" path="res://UI TEXTURE/ep.png" id="3_e5gju"]
+[ext_resource type="Texture2D" uid="uid://b1u6sgxxem8qe" path="res://UI TEXTURE/p.png" id="4_gn0ew"]
+[ext_resource type="Texture2D" uid="uid://cstkiyfd10kd2" path="res://UI TEXTURE/pp.png" id="5_34ieg"]
+[ext_resource type="Texture2D" uid="uid://d376aesk2e630" path="res://UI TEXTURE/s.png" id="6_ttgw7"]
+[ext_resource type="Texture2D" uid="uid://bo1ajy7pc8r7v" path="res://UI TEXTURE/sp.png" id="7_xxtxt"]
+
+[node name="loading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gn0ew")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xxtxt")
+expand_mode = 5
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -535.5
+offset_top = -830.5
+offset_right = 535.5
+offset_bottom = -321.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7twqp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -396.0
+offset_top = -778.0
+offset_right = 376.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="p" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_gn0ew")
+texture_pressed = ExtResource("5_34ieg")
+texture_hover = ExtResource("5_34ieg")
+
+[node name="e" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_dgph3")
+texture_pressed = ExtResource("3_e5gju")
+texture_hover = ExtResource("3_e5gju")
+
+[node name="s" type="TextureButton" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("6_ttgw7")
+texture_pressed = ExtResource("7_xxtxt")
+texture_hover = ExtResource("7_xxtxt")
+
+[connection signal="pressed" from="VBoxContainer/p" to="." method="_on_p_pressed"]
+[connection signal="pressed" from="VBoxContainer/e" to="." method="_on_e_pressed"]
+[connection signal="pressed" from="VBoxContainer/s" to="." method="_on_s_pressed"]

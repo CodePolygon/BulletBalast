@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2seydfuubmik"]
+
+[sub_resource type="Shader" id="Shader_pn6mt"]
+code = "shader_type canvas_item;
+
+uniform sampler2D screen_texture; // Manual screen texture
+uniform float noise_strength : hint_range(0.0, 1.0) = 0.3;
+uniform float noise_scale : hint_range(1.0, 10.0) = 5.0;
+uniform float time_speed : hint_range(0.0, 5.0) = 1.0;
+
+float random(vec2 uv) {
+    return fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+void fragment() {
+    // Get the original screen color
+    vec4 scene_color = texture(screen_texture, SCREEN_UV);
+
+    // Generate procedural noise
+    float noise = random(UV * noise_scale + TIME * time_speed);
+
+    // Blend noise with the scene
+    float noise_effect = mix(scene_color.r, noise, noise_strength);
+
+    COLOR = vec4(vec3(noise_effect), scene_color.a);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejo8p"]
+shader = SubResource("Shader_pn6mt")
+shader_parameter/noise_strength = 0.3
+shader_parameter/noise_scale = 5.0
+shader_parameter/time_speed = 1.0
+
+[node name="overlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.00392157)
+material = SubResource("ShaderMaterial_ejo8p")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

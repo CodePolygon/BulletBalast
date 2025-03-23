@@ -1,0 +1,120 @@
+[gd_scene load_steps=17 format=4 uid="uid://d1plax082b7t3"]
+
+[ext_resource type="Texture2D" uid="uid://beebmgkhuxj2q" path="res://assets/own_models/gun-game_cocrete grey_BaseColor.png-cocrete grey_Alpha.png" id="1_g8yh5"]
+[ext_resource type="Texture2D" uid="uid://b3wteu63x56jv" path="res://assets/own_models/gun-game_cocrete grey_Emissive.png" id="2_pkn4o"]
+[ext_resource type="Texture2D" uid="uid://b3irbhjwcraqv" path="res://assets/own_models/gun-game_cocrete grey_Metallic.png-cocrete grey_Roughness.png" id="3_ehoa1"]
+[ext_resource type="Texture2D" uid="uid://jhmn56qfnuj1" path="res://assets/own_models/gun-game_cocrete grey_Normal.png" id="4_31ebt"]
+[ext_resource type="Texture2D" uid="uid://co4ap7at0w6kk" path="res://assets/own_models/gun-game_boarder 2mod-cocrete grey_Alpha.png" id="5_viu7r"]
+[ext_resource type="Texture2D" uid="uid://ct38kdjxmk3yq" path="res://assets/own_models/cocrete grey/cocrete grey_BaseColor.png" id="6_jxwj0"]
+[ext_resource type="Texture2D" uid="uid://djmknxmk0gm18" path="res://assets/own_models/cocrete grey/cocrete grey_Displacement.png" id="7_0ud8a"]
+[ext_resource type="Texture2D" uid="uid://8okdmghcvm7p" path="res://assets/own_models/cocrete grey/cocrete grey_Normal.png" id="8_ktdqj"]
+[ext_resource type="Texture2D" uid="uid://bm0racn0pgfxq" path="res://assets/own_models/cocrete grey/cocrete grey_Roughness.png" id="9_y1b8k"]
+[ext_resource type="Material" uid="uid://dfynf4pwbxvwj" path="res://assets/own_models/new_standard_material_3d.tres" id="10_v3oal"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2np0"]
+resource_name = "b"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_g8yh5")
+metallic = 1.0
+metallic_texture = ExtResource("3_ehoa1")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_ehoa1")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("2_pkn4o")
+normal_enabled = true
+normal_texture = ExtResource("4_31ebt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pp8xx"]
+resource_name = "side"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("5_viu7r")
+metallic = 1.0
+metallic_texture = ExtResource("3_ehoa1")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_ehoa1")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("2_pkn4o")
+normal_enabled = true
+normal_texture = ExtResource("4_31ebt")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_quygw"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "b",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAD//wAA//8AAP//AAAAAAAAAAAAAP//AAD/////AAAAAAAA/////wAAAAD//wAAAAD///////8AAA==")
+}, {
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEABAACAAYAAwAHAAUABwAEAAYABwAGAAUA"),
+"name": "side",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD//wAA//8AAP////8AAAAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xo5rc"]
+resource_name = "gun-game_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("AAAAAP///////wAAAAD/////AAAAAP//AAAAAP////8="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_q2np0"),
+"name": "b",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAA/z///wAA////P///AAAAAP8/AAAAAP///z//////AAD/vwAA//////+/AAD//wAA/7//////////vwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/")
+}, {
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("AAD/////AAAAAAAA/////wAA/////wAAAAAAAP//////////AAAAAP//AAAAAP///////wAAAAD//wAAAAD//w=="),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0A"),
+"material": SubResource("StandardMaterial3D_pp8xx"),
+"name": "side",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAP////8AAAAAAAD//wAAAAD//wAAAAAAAP//AAAAAP+//////////7//////AAD/v///AAD///+///8AAP//AIAAAP////8AgP///////wCAAAAAAP//AID/P/9//z//f/8//3//P/9/////f////3////9/////f/9/AAD/fwAA/38AAP9/AAD/f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_quygw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3urn"]
+albedo_color = Color(0.720467, 0.720468, 0.720467, 1)
+albedo_texture = ExtResource("6_jxwj0")
+roughness_texture = ExtResource("9_y1b8k")
+normal_enabled = true
+normal_texture = ExtResource("8_ktdqj")
+heightmap_enabled = true
+heightmap_texture = ExtResource("7_0ud8a")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_q8ahu"]
+data = PackedVector3Array(-1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1)
+
+[node name="Cube_002" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_xo5rc")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_g3urn")
+surface_material_override/1 = ExtResource("10_v3oal")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+visible = false
+shape = SubResource("ConcavePolygonShape3D_q8ahu")

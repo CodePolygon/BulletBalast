@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5am0x5c0amt5"]
+
+[ext_resource type="Script" uid="uid://bfad7aex3qut" path="res://scripts/bullet.gd" id="1_guetv"]
+[ext_resource type="PackedScene" uid="uid://cvrssgfhg6nep" path="res://assets/kenney_blaster-kit/Models/GLTF format/foamBulletB.glb" id="1_njmcg"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_njmcg"]
+height = 0.0590668
+radius = 0.0107422
+
+[node name="bullet" type="RigidBody3D"]
+script = ExtResource("1_guetv")
+speed = 0.002
+
+[node name="foamBulletB2" parent="." instance=ExtResource("1_njmcg")]
+transform = Transform3D(4.37114e-08, 1.31134e-07, -1, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 1.31134e-07, 0.000652313, 4.30654e-11, -0.000652313)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.37114e-08, 1.31134e-07, -1, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 1.31134e-07, 0.000652313, -4.30654e-11, 0.000652313)
+shape = SubResource("CylinderShape3D_njmcg")

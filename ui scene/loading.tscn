@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://dr41qqj753xb7"]
+
+[ext_resource type="Script" uid="uid://ddc5v0g1eyg1h" path="res://ui scene/loading.gd" id="1_ihh3a"]
+[ext_resource type="Texture2D" uid="uid://bunv1c3tsigf6" path="res://UI TEXTURE/BG.png" id="1_tc484"]
+[ext_resource type="Texture2D" uid="uid://r461fpxvn21j" path="res://UI TEXTURE/logo.png" id="2_ihh3a"]
+[ext_resource type="Texture2D" uid="uid://b63yf5gtdejhu" path="res://UI TEXTURE/loading/bg.png" id="3_45235"]
+[ext_resource type="Texture2D" uid="uid://bg1kghmc8u4fe" path="res://UI TEXTURE/loading/top.png" id="4_54sk1"]
+[ext_resource type="Texture2D" uid="uid://bisplkma04uyv" path="res://UI TEXTURE/loading/bar.png" id="5_jwixn"]
+[ext_resource type="FontFile" uid="uid://bm0le83yal7xm" path="res://UI TEXTURE/RubikSprayPaint-Regular.ttf" id="6_2pe2a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iy1i6"]
+font = ExtResource("6_2pe2a")
+font_size = 48
+font_color = Color(0.972549, 0.760784, 0.745098, 1)
+shadow_size = 12
+shadow_color = Color(0.784314, 0.0941176, 0.254902, 0.701961)
+
+[node name="loading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ihh3a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tc484")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -535.5
+offset_top = -670.5
+offset_right = 535.5
+offset_bottom = -161.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ihh3a")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -533.0
+offset_top = -244.0
+offset_right = 533.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_under = ExtResource("3_45235")
+texture_over = ExtResource("4_54sk1")
+texture_progress = ExtResource("5_jwixn")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -166.5
+offset_top = -204.0
+offset_right = 166.5
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Loading..."
+label_settings = SubResource("LabelSettings_iy1i6")
+horizontal_alignment = 1

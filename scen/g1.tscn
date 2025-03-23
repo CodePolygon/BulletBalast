@@ -1,0 +1,224 @@
+[gd_scene load_steps=20 format=3 uid="uid://dynscfb4oc5qg"]
+
+[ext_resource type="Script" uid="uid://bd5hyh8drhfli" path="res://scen/g_1_v3.gd" id="1_d07ow"]
+[ext_resource type="PackedScene" uid="uid://b1c0mojfapkav" path="res://assets/kenney_blaster-kit/Models/GLTF format/blasterC.glb" id="1_otegt"]
+[ext_resource type="Texture2D" uid="uid://83m2863jqkih" path="res://assets/PNG (Transparent)/muzzle_05.png" id="4_etbxm"]
+[ext_resource type="Script" uid="uid://c0ksi4d80c5uw" path="res://scen/bullet_sp.gd" id="5_tc1xu"]
+[ext_resource type="PackedScene" uid="uid://c5am0x5c0amt5" path="res://scen/bullet.tscn" id="6_7l6rt"]
+[ext_resource type="Script" uid="uid://5q7j3r0ndnsx" path="res://camera/CameraFollow.gd" id="7_7l6rt"]
+[ext_resource type="AudioStream" uid="uid://dx8eile5ist5d" path="res://audio/bullet/450854__kyles__gun-lee-enfield-303-rifle-fire-shot.wav" id="8_y8n4v"]
+[ext_resource type="Texture2D" uid="uid://c84l0msp5fd8t" path="res://UI TEXTURE/speed/bg.png" id="9_sft3a"]
+[ext_resource type="Texture2D" uid="uid://bi0db4qlwuqtj" path="res://UI TEXTURE/speed/top.png" id="10_axos0"]
+[ext_resource type="Texture2D" uid="uid://dyj41702b46og" path="res://UI TEXTURE/speed/bar.png" id="11_fat64"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_otegt"]
+size = Vector3(0.102173, 0.34153, 0.486816)
+
+[sub_resource type="Animation" id="Animation_etbxm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_d07ow"]
+resource_name = "fl"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tc1xu"]
+_data = {
+&"RESET": SubResource("Animation_etbxm"),
+&"fl": SubResource("Animation_d07ow")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_sft3a"]
+font_size = 50
+
+[sub_resource type="Animation" id="Animation_fat64"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_axos0"]
+resource_name = "st"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.43333, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jx8v4"]
+_data = {
+&"RESET": SubResource("Animation_fat64"),
+&"st": SubResource("Animation_axos0")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sft3a"]
+radius = 0.348258
+
+[node name="g1" type="RigidBody3D"]
+script = ExtResource("1_d07ow")
+inc_force = 0.1
+force_limit = 12.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.37114e-08, 1, -2.13163e-14, -1, 4.37114e-08, -8.74228e-08, -8.74228e-08, 2.84217e-14, 1, -0.00649364, 0, -0.0286205)
+shape = SubResource("BoxShape3D_otegt")
+
+[node name="blasterC2" parent="." instance=ExtResource("1_otegt")]
+transform = Transform3D(4.37114e-08, 1, -2.13163e-14, -1, 4.37114e-08, -8.74228e-08, -8.74228e-08, 2.84217e-14, 1, -0.00636017, -0.000671386, -0.0286205)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tc1xu")
+}
+speed_scale = 2.0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.119507, -1.77998e-10, -1.35203e-09, -1.35203e-09, 0, -0.119507, 1.77998e-10, 0.119507, 0, 0, 0, 0.421532)
+visible = false
+modulate = Color(1, 0.796078, 0, 0.858824)
+texture = ExtResource("4_etbxm")
+
+[node name="Node3D" type="Node3D" parent="."]
+script = ExtResource("5_tc1xu")
+bullet_scene = ExtResource("6_7l6rt")
+
+[node name="Node3D2" type="Node3D" parent="."]
+
+[node name="Camera3D2" type="Camera3D" parent="Node3D2"]
+top_level = true
+current = true
+script = ExtResource("7_7l6rt")
+target_distance = 4
+target_height = 6
+speed = 2.0
+
+[node name="shoot_soung" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_y8n4v")
+volume_db = 4.0
+
+[node name="CheckButton" type="CheckButton" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 53.0
+grow_horizontal = 0
+text = "heigh difficulty"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.5
+offset_top = -93.0
+offset_right = 386.5
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hi, here is your controlls:-
+ARROWS/ A,D
+android ;- HOLDE AND RELESE"
+label_settings = SubResource("LabelSettings_sft3a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_jx8v4")
+}
+autoplay = "st"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 1066.0
+offset_bottom = 148.0
+value = 4.0
+texture_under = ExtResource("9_sft3a")
+texture_over = ExtResource("10_axos0")
+texture_progress = ExtResource("11_fat64")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-238, -231)
+scale = Vector2(1.54878, 15.6419)
+texture_normal = ExtResource("9_sft3a")
+action = "LEFT"
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0402477, 0)
+shape = SubResource("SphereShape3D_sft3a")
+
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
